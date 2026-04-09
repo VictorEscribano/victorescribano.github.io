@@ -421,11 +421,22 @@ body.dark .theme-toggle .icon-moon {
   z-index: 5;
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 0 2rem;
+  text-align: left;
+  padding: 0 6vw;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-title-wrapper {
@@ -435,7 +446,7 @@ body.dark .theme-toggle .icon-moon {
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(3.5rem, 8vw, 8rem);
   line-height: 0.9;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -444,19 +455,16 @@ body.dark .theme-toggle .icon-moon {
 
 .hero-title .line-2 {
   display: block;
-  padding-left: 0.5em;
+  padding-left: 0.3em;
 }
 
-/* Image frame behind title */
+/* Hero portrait photo */
 .hero-image-frame {
-  position: absolute;
-  top: -10%;
-  right: -15%;
-  width: 45%;
+  flex: 0 0 auto;
+  width: clamp(260px, 28vw, 420px);
   aspect-ratio: 3/4;
   border: 1px solid var(--accent);
   background: rgba(44, 95, 124, 0.06);
-  z-index: -1;
   overflow: hidden;
 }
 
@@ -464,12 +472,24 @@ body.dark .theme-toggle .icon-moon {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7;
 }
 
 @media (max-width: 767px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
   .hero-image-frame {
-    display: none;
+    width: 60vw;
+    max-width: 280px;
+  }
+  .hero-title {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+  .hero-title .line-2 {
+    padding-left: 0;
   }
 }
 
