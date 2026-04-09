@@ -233,12 +233,19 @@ button {
   border-radius: 50%;
   border: 1px solid var(--separator);
   color: var(--text);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
   transition: border-color 0.3s, color 0.3s;
 }
 
 .theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.theme-toggle svg {
+  pointer-events: none;
 }
 
 .theme-toggle .icon-moon {
@@ -316,6 +323,7 @@ button {
   cursor: pointer;
   padding: 0.5rem;
   line-height: 1;
+  z-index: 120;
   transition: color 0.3s;
 }
 
