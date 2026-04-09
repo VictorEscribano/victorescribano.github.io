@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <style>
     body.dark{--bg:#0a0a0a;--surface:#141414;--accent:#5a9fc2;--accent-light:#74b5d4;--gold:#c8a96e;--teal:#5a9fc2;--text:#f0ece4;--text-muted:#888880;--separator:#2a2a2a;--grid-line:#1a1a1a;background:#0a0a0a;color:#f0ece4}
     body.dark .icon-sun{display:none}body.dark .icon-moon{display:block!important}
@@ -46,10 +46,10 @@
   <!-- Mobile Menu -->
   <nav class="mobile-menu">
     <button class="mobile-menu-close" aria-label="Cerrar menú" onclick="document.querySelector('.mobile-menu').classList.remove('open');document.querySelector('.hamburger').classList.remove('active');document.body.style.overflow=''">✕</button>
-    <a href="#work">Trabajo</a>
-    <a href="#gear">Kit</a>
-    <a href="#collabs">Collabs</a>
-    <a href="#contact">Contacto</a>
+    <a href="#work" data-i18n="nav.work">Trabajo</a>
+    <a href="#gear" data-i18n="nav.gear">Kit</a>
+    <a href="#collabs" data-i18n="nav.collabs">Collabs</a>
+    <a href="#contact" data-i18n="nav.contact">Contacto</a>
   </nav>
 
   <!-- ============================================
@@ -61,12 +61,21 @@
     <header class="hero-nav">
       <a href="#hero" class="logo">VEG</a>
       <ul class="nav-links">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#gear">Gear</a></li>
-        <li><a href="#collabs">Collabs</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#work" data-i18n="nav.work">Trabajo</a></li>
+        <li><a href="#gear" data-i18n="nav.gear">Kit</a></li>
+        <li><a href="#collabs" data-i18n="nav.collabs">Collabs</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
       </ul>
       <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn" onclick="this.parentElement.classList.toggle('open')">ES</button>
+          <div class="lang-dropdown">
+            <button onclick="setLang('es')">ES</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+            <button onclick="setLang('zh')">中文</button>
+          </div>
+        </div>
         <button class="theme-toggle" aria-label="Cambiar tema" onclick="document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light')">
           <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -89,7 +98,7 @@
         <div class="hero-image-frame"></div>
       </div>
 
-      <p class="hero-tagline">"La cámara, la mochila y la carretera."</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">"La cámara, la mochila y la carretera."</p>
 
       <div class="hero-stats">
         <span class="hero-stat">Barcelona · 26</span>
@@ -141,32 +150,32 @@
       </div>
 
       <div class="about-text">
-        <p class="about-label" data-animate>Who I Am</p>
+        <p class="about-label" data-animate data-i18n="about.label">Quién soy</p>
         <h2 class="about-heading" data-animate>
-          <span class="h-lg">Viajero.</span>
-          <span class="h-md">Narrador visual.</span>
-          <span class="h-sm">Ingeniero de día.</span>
+          <span class="h-lg" data-i18n="about.h1">Viajero.</span>
+          <span class="h-md" data-i18n="about.h2">Narrador visual.</span>
+          <span class="h-sm" data-i18n="about.h3">Ingeniero de día.</span>
         </h2>
-        <blockquote class="about-body" data-animate>
+        <blockquote class="about-body" data-animate data-i18n="about.body">
           Pasé 5 noches en el Erg Chegaga con Mohammed, mi guía nómada, sin turistas, sin señal, sin filtros. Antes estuve en Islandia buscando auroras boreales en el hielo. Y antes de eso, en el Instituto de Astrofísica de Canarias mirando el universo desde otro ángulo. Viajo solo, hago amigos por el camino, duermo en hostales y lo grabo todo con una Fujifilm XM-5 que me cabe en la riñonera.
         </blockquote>
 
         <div class="about-features" data-animate>
           <div class="about-feature">
             <div class="icon">🎬</div>
-            <div class="label">Cinematic video & foto</div>
+            <div class="label" data-i18n="about.feat1">Cinematic video & foto</div>
           </div>
           <div class="about-feature">
             <div class="icon">🌍</div>
-            <div class="label">Viajes reales, stories reales</div>
+            <div class="label" data-i18n="about.feat2">Viajes reales, stories reales</div>
           </div>
           <div class="about-feature">
             <div class="icon">🧭</div>
-            <div class="label">Aventuras sin guion</div>
+            <div class="label" data-i18n="about.feat3">Aventuras sin guion</div>
           </div>
         </div>
 
-        <a href="#work" class="btn-outline" data-animate>Ver mi trabajo ↓</a>
+        <a href="#work" class="btn-outline" data-animate data-i18n="about.cta">Ver mi trabajo ↓</a>
       </div>
     </div>
   </section>
@@ -176,40 +185,40 @@
        ============================================ -->
   <section class="categories" id="categories">
     <div class="section-header" data-animate>
-      <h2 class="section-title">Lo que creo</h2>
-      <p class="section-subtitle">lo que llevo en la mochila y en la cabeza</p>
+      <h2 class="section-title" data-i18n="cat.title">Lo que creo</h2>
+      <p class="section-subtitle" data-i18n="cat.subtitle">lo que llevo en la mochila y en la cabeza</p>
     </div>
 
     <div class="categories-scroll">
       <div class="category-card" data-animate>
         <div class="category-icon">01 — Solo</div>
-        <h3 class="category-name">Viaje solo</h3>
-        <p class="category-desc">Hostales, autoestop y conversaciones que cambian perspectivas</p>
+        <h3 class="category-name" data-i18n="cat.1.name">Viaje solo</h3>
+        <p class="category-desc" data-i18n="cat.1.desc">Hostales, autoestop y conversaciones que cambian perspectivas</p>
       </div>
       <div class="category-card" data-animate data-delay="1">
         <div class="category-icon">02 — Foto</div>
-        <h3 class="category-name">Fotografía cinemática</h3>
-        <p class="category-desc">Fujifilm XM-5 + lentes Sirui anamórficas. F-Log2. Color grading manual</p>
+        <h3 class="category-name" data-i18n="cat.2.name">Fotografía cinemática</h3>
+        <p class="category-desc" data-i18n="cat.2.desc">Fujifilm XM-5 + lentes Sirui anamórficas. F-Log2. Color grading manual</p>
       </div>
       <div class="category-card" data-animate data-delay="2">
         <div class="category-icon">03 — Vídeo</div>
-        <h3 class="category-name">Vídeo narrativo</h3>
-        <p class="category-desc">No monto un corte sin que cuente algo. Cada secuencia tiene una razón</p>
+        <h3 class="category-name" data-i18n="cat.3.name">Vídeo narrativo</h3>
+        <p class="category-desc" data-i18n="cat.3.desc">No monto un corte sin que cuente algo. Cada secuencia tiene una razón</p>
       </div>
       <div class="category-card" data-animate data-delay="3">
         <div class="category-icon">04 — Crew</div>
-        <h3 class="category-name">Viaje con amigos</h3>
-        <p class="category-desc">El mismo espíritu aventurero, más risas, diferente energía</p>
+        <h3 class="category-name" data-i18n="cat.4.name">Viaje con amigos</h3>
+        <p class="category-desc" data-i18n="cat.4.desc">El mismo espíritu aventurero, más risas, diferente energía</p>
       </div>
       <div class="category-card" data-animate data-delay="4">
         <div class="category-icon">05 — Cultura</div>
-        <h3 class="category-name">Cultura & Gente</h3>
-        <p class="category-desc">Los sitios importan, pero las personas que conoces por el camino importan más</p>
+        <h3 class="category-name" data-i18n="cat.5.name">Cultura & Gente</h3>
+        <p class="category-desc" data-i18n="cat.5.desc">Los sitios importan, pero las personas que conoces por el camino importan más</p>
       </div>
       <div class="category-card" data-animate data-delay="5">
         <div class="category-icon">06 — Vlog</div>
-        <h3 class="category-name">Vlogging</h3>
-        <p class="category-desc">Cámara en la mano. Sin guion. Sin pretender</p>
+        <h3 class="category-name" data-i18n="cat.6.name">Vlogging</h3>
+        <p class="category-desc" data-i18n="cat.6.desc">Cámara en la mano. Sin guion. Sin pretender</p>
       </div>
     </div>
   </section>
@@ -219,40 +228,40 @@
        ============================================ -->
   <section class="gear" id="gear">
     <div class="gear-inner">
-      <p class="gear-label" data-animate>Mi Kit</p>
-      <h2 class="gear-heading" data-animate>"La riñonera más poderosa del mundo"</h2>
-      <p class="gear-subtitle" data-animate>Todo lo que necesito cabe en menos de 2kg</p>
+      <p class="gear-label" data-animate data-i18n="gear.label">Mi Kit</p>
+      <h2 class="gear-heading" data-animate data-i18n="gear.heading">"La riñonera más poderosa del mundo"</h2>
+      <p class="gear-subtitle" data-animate data-i18n="gear.subtitle">Todo lo que necesito cabe en menos de 2kg</p>
 
       <ul class="gear-list">
         <li class="gear-item" data-animate data-delay="1">
           <span class="gear-num">01</span>
           <span class="gear-name">Fujifilm X-M5 <span class="gear-badge">collab</span></span>
-          <span class="gear-note">Cuerpo principal</span>
-          <div class="gear-blurb">Compacta, ligera y con F-Log2. La cámara que siempre va en mi riñonera sin pesar más que un libro.</div>
+          <span class="gear-note" data-i18n="gear.1.note">Cuerpo principal</span>
+          <div class="gear-blurb" data-i18n="gear.1.blurb">Compacta, ligera y con F-Log2. La cámara que siempre va en mi riñonera sin pesar más que un libro.</div>
         </li>
         <li class="gear-item" data-animate data-delay="2">
           <span class="gear-num">02</span>
           <span class="gear-name">Lente 15-45mm kit</span>
-          <span class="gear-note">Versátil y ligera</span>
-          <div class="gear-blurb">El zoom kit que cubre desde paisajes épicos hasta retratos ambientales. Perfecta para viajar ligero.</div>
+          <span class="gear-note" data-i18n="gear.2.note">Versátil y ligera</span>
+          <div class="gear-blurb" data-i18n="gear.2.blurb">El zoom kit que cubre desde paisajes épicos hasta retratos ambientales. Perfecta para viajar ligero.</div>
         </li>
         <li class="gear-item" data-animate data-delay="3">
           <span class="gear-num">03</span>
           <span class="gear-name">Sirui 20mm Anamórfica AF <span class="gear-badge">collab</span></span>
-          <span class="gear-note">Look de cine</span>
-          <div class="gear-blurb">Flares horizontales, relación de aspecto ancha. Calidad de cine en menos de 300 gramos.</div>
+          <span class="gear-note" data-i18n="gear.3.note">Look de cine</span>
+          <div class="gear-blurb" data-i18n="gear.3.blurb">Flares horizontales, relación de aspecto ancha. Calidad de cine en menos de 300 gramos.</div>
         </li>
         <li class="gear-item" data-animate data-delay="4">
           <span class="gear-num">04</span>
           <span class="gear-name">DJI Mic <span class="gear-badge">collab</span></span>
-          <span class="gear-note">Próximamente</span>
-          <div class="gear-blurb">Audio limpio sin cables. Para capturar conversaciones que cambian vidas en cualquier entorno.</div>
+          <span class="gear-note" data-i18n="gear.4.note">Próximamente</span>
+          <div class="gear-blurb" data-i18n="gear.4.blurb">Audio limpio sin cables. Para capturar conversaciones que cambian vidas en cualquier entorno.</div>
         </li>
         <li class="gear-item" data-animate data-delay="5">
           <span class="gear-num">05</span>
           <span class="gear-name">DJI Action 360 <span class="gear-badge">collab</span></span>
-          <span class="gear-note">Próximamente</span>
-          <div class="gear-blurb">Lo que la cámara principal no puede mostrar. Inmersión total en los paisajes más remotos del mundo.</div>
+          <span class="gear-note" data-i18n="gear.5.note">Próximamente</span>
+          <div class="gear-blurb" data-i18n="gear.5.blurb">Lo que la cámara principal no puede mostrar. Inmersión total en los paisajes más remotos del mundo.</div>
         </li>
       </ul>
     </div>
@@ -264,11 +273,11 @@
   <section class="work" id="work">
     <div class="work-inner">
       <div class="section-header" data-animate>
-        <h2 class="section-title">Trabajo</h2>
+        <h2 class="section-title" data-i18n="work.title">Trabajo</h2>
       </div>
 
       <!-- Photography -->
-      <p class="work-sub-label" data-animate>Fotografía</p>
+      <p class="work-sub-label" data-animate data-i18n="work.photo">Fotografía</p>
       <div class="photo-grid">
         <!-- REPLACE: Upload your best photos here -->
         <div class="photo-cell tall" data-animate>
@@ -306,7 +315,7 @@
       </div>
 
       <!-- Video -->
-      <p class="work-sub-label" data-animate>Vídeo</p>
+      <p class="work-sub-label" data-animate data-i18n="work.video">Vídeo</p>
       <div class="video-scroll">
         <!-- REPLACE: Add YouTube or Vimeo embed URL -->
         <div class="video-card" data-animate>
@@ -336,53 +345,53 @@
        ============================================ -->
   <section class="collabs" id="collabs">
     <div class="collabs-inner">
-      <p class="about-label" data-animate>Colaboraciones</p>
-      <h2 class="gear-heading" data-animate style="font-style: normal; margin-bottom: 1rem;">"Marcas en las que creo"</h2>
-      <p class="collabs-body" data-animate>No hago publicidad. Cuento por qué uso estas herramientas en el mundo real, con contexto real, en los sitios más remotos del mundo.</p>
+      <p class="about-label" data-animate data-i18n="collabs.label">Colaboraciones</p>
+      <h2 class="gear-heading" data-animate style="font-style: normal; margin-bottom: 1rem;" data-i18n="collabs.heading">"Marcas en las que creo"</h2>
+      <p class="collabs-body" data-animate data-i18n="collabs.body">No hago publicidad. Cuento por qué uso estas herramientas en el mundo real, con contexto real, en los sitios más remotos del mundo.</p>
 
       <div class="brands-grid" data-animate>
         <div class="brand-card">
           <h3 class="brand-name">Fujifilm</h3>
-          <p class="brand-pitch">La cámara que siempre va en mi riñonera</p>
+          <p class="brand-pitch" data-i18n="brand.1">La cámara que siempre va en mi riñonera</p>
           <div class="brand-underline"></div>
         </div>
         <div class="brand-card">
           <h3 class="brand-name">Sirui</h3>
-          <p class="brand-pitch">Calidad de cine en menos de 300g</p>
+          <p class="brand-pitch" data-i18n="brand.2">Calidad de cine en menos de 300g</p>
           <div class="brand-underline"></div>
         </div>
         <div class="brand-card">
           <h3 class="brand-name">DJI Mic</h3>
-          <p class="brand-pitch">Capturar conversaciones que cambian vidas</p>
+          <p class="brand-pitch" data-i18n="brand.3">Capturar conversaciones que cambian vidas</p>
           <div class="brand-underline"></div>
         </div>
         <div class="brand-card">
           <h3 class="brand-name">DJI 360</h3>
-          <p class="brand-pitch">Lo que la cámara principal no puede mostrar</p>
+          <p class="brand-pitch" data-i18n="brand.4">Lo que la cámara principal no puede mostrar</p>
           <div class="brand-underline"></div>
         </div>
         <div class="brand-card">
           <h3 class="brand-name">eSIM</h3>
-          <p class="brand-pitch">Conectado en el Sáhara</p>
+          <p class="brand-pitch" data-i18n="brand.5">Conectado en el Sáhara</p>
           <div class="brand-underline"></div>
         </div>
         <div class="brand-card">
-          <h3 class="brand-name">Seguros de viaje</h3>
-          <p class="brand-pitch">Me lo juego todo. Por eso me aseguro</p>
+          <h3 class="brand-name" data-i18n="brand.6.name">Seguros de viaje</h3>
+          <p class="brand-pitch" data-i18n="brand.6">Me lo juego todo. Por eso me aseguro</p>
           <div class="brand-underline"></div>
         </div>
         <div class="brand-card">
           <h3 class="brand-name">Sound FX Library</h3>
-          <p class="brand-pitch">El rugido de los camellos que no pude grabar en directo</p>
+          <p class="brand-pitch" data-i18n="brand.7">El rugido de los camellos que no pude grabar en directo</p>
           <div class="brand-underline"></div>
         </div>
       </div>
 
       <div class="collabs-cta" data-animate>
-        <h3>¿Hablamos?</h3>
-        <p>Si crees que tu marca encaja con aventuras reales, sitios reales y cero pose, escríbeme.</p>
+        <h3 data-i18n="collabs.cta.title">¿Hablamos?</h3>
+        <p data-i18n="collabs.cta.body">Si crees que tu marca encaja con aventuras reales, sitios reales y cero pose, escríbeme.</p>
         <!-- UPDATE: Replace placeholder email with your real email -->
-        <a href="mailto:victor.escribano@placeholder.com" class="btn-filled">Proponer colaboración</a>
+        <a href="mailto:vesgarcia99@gmail.com" class="btn-filled" data-i18n="collabs.cta.btn">Proponer colaboración</a>
       </div>
     </div>
   </section>
@@ -399,40 +408,38 @@
           <span>📍</span> Barcelona, España
         </div>
         <div class="contact-item">
-          <!-- UPDATE: Replace with your real Instagram handle -->
-          <span>📸</span> <a href="https://instagram.com/victorescribanog" target="_blank" rel="noopener">@victorescribanog</a>
+          <span>📸</span> <a href="https://www.instagram.com/victor.escri/" target="_blank" rel="noopener">@victor.escri</a>
         </div>
         <div class="contact-item">
-          <!-- UPDATE: Replace with your real email -->
-          <span>✉️</span> <a href="mailto:victor.escribano@placeholder.com">victor.escribano@placeholder.com</a>
+          <span>✉️</span> <a href="mailto:vesgarcia99@gmail.com">vesgarcia99@gmail.com</a>
         </div>
       </div>
 
       <div class="social-icons" data-animate>
         <!-- Instagram -->
-        <a href="https://instagram.com/victorescribanog" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://www.instagram.com/victor.escri/" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
         <!-- TikTok -->
-        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
+        <a href="https://www.tiktok.com/@victor.escri" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
         </a>
         <!-- YouTube -->
-        <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+        <a href="https://www.youtube.com/@TrantorMule" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
         <!-- LinkedIn -->
-        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://es.linkedin.com/in/victor-escribano-garcia-301774150" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
       </div>
 
-      <footer class="footer" data-animate>
+      <footer class="footer" data-animate data-i18n="footer">
         © 2025 Victor Escribano Garcia · Hecho con Fujifilm y obsesión
       </footer>
     </div>
   </section>
 
-  <script src="main.js?v=4"></script>
+  <script src="main.js?v=5"></script>
 </body>
 </html>
