@@ -421,22 +421,21 @@ body.dark .theme-toggle .icon-moon {
   z-index: 5;
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
-  padding: 0 6vw;
-  gap: 4rem;
+  text-align: center;
+  padding: 0 2rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  gap: 2.5rem;
 }
 
 .hero-text {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .hero-title-wrapper {
@@ -460,8 +459,7 @@ body.dark .theme-toggle .icon-moon {
 
 /* Hero portrait photo */
 .hero-image-frame {
-  flex: 0 0 auto;
-  width: clamp(260px, 28vw, 420px);
+  width: clamp(220px, 22vw, 340px);
   aspect-ratio: 3/4;
   border: 1px solid var(--accent);
   background: rgba(44, 95, 124, 0.06);
@@ -476,14 +474,12 @@ body.dark .theme-toggle .icon-moon {
 
 @media (max-width: 767px) {
   .hero-content {
-    flex-direction: column-reverse;
-    text-align: center;
     padding: 2rem 1.5rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .hero-image-frame {
-    width: 60vw;
-    max-width: 280px;
+    width: 55vw;
+    max-width: 260px;
   }
   .hero-title {
     font-size: clamp(3rem, 14vw, 5rem);
