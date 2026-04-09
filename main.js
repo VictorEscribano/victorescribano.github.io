@@ -34,24 +34,9 @@
   }
 
   // --- Dark Mode Toggle ---
-  var themeToggle = document.querySelector('.theme-toggle');
-
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }
-
   // Load saved preference (default: light)
-  var savedTheme = localStorage.getItem('theme') || 'light';
-  if (savedTheme === 'dark') {
-    setTheme('dark');
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme');
-      setTheme(current === 'dark' ? 'light' : 'dark');
-    });
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
   }
 
   // --- Scroll Animations (Intersection Observer) ---

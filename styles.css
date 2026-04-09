@@ -18,7 +18,7 @@
 }
 
 /* --- Dark Mode --- */
-html[data-theme="dark"] {
+body.dark {
   --bg: #0a0a0a;
   --surface: #141414;
   --accent: #5a9fc2;
@@ -29,6 +29,8 @@ html[data-theme="dark"] {
   --text-muted: #888880;
   --separator: #2a2a2a;
   --grid-line: #1a1a1a;
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* --- Reset & Base --- */
@@ -44,7 +46,7 @@ html {
   color-scheme: light;
 }
 
-html[data-theme="dark"] {
+body.dark {
   color-scheme: dark;
 }
 
@@ -257,11 +259,11 @@ button {
   display: none;
 }
 
-html[data-theme="dark"] .theme-toggle .icon-sun {
+body.dark .theme-toggle .icon-sun {
   display: none;
 }
 
-html[data-theme="dark"] .theme-toggle .icon-moon {
+body.dark .theme-toggle .icon-moon {
   display: block;
 }
 
@@ -1249,36 +1251,36 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
 }
 
 /* --- Dark Mode Overrides (hardcoded colors) --- */
-html[data-theme="dark"] .hero-bg {
+body.dark .hero-bg {
   background:
     radial-gradient(ellipse at 80% 90%, rgba(90, 159, 194, 0.1) 0%, transparent 50%),
     radial-gradient(ellipse at 20% 10%, rgba(200, 169, 110, 0.08) 0%, transparent 50%),
     var(--bg);
 }
 
-html[data-theme="dark"] .photo-overlay {
+body.dark .photo-overlay {
   background: linear-gradient(transparent, rgba(10, 10, 10, 0.9));
 }
 
-html[data-theme="dark"] .video-frame:hover .play-btn {
+body.dark .video-frame:hover .play-btn {
   background: rgba(90, 159, 194, 0.15);
 }
 
-html[data-theme="dark"] .contact {
+body.dark .contact {
   background:
     radial-gradient(ellipse at 10% 80%, rgba(90, 159, 194, 0.08) 0%, transparent 50%),
     radial-gradient(ellipse at 90% 20%, rgba(200, 169, 110, 0.06) 0%, transparent 50%),
     var(--bg);
 }
 
-html[data-theme="dark"] .btn-filled {
+body.dark .btn-filled {
   color: var(--bg);
 }
 
-html[data-theme="dark"] #grain {
+body.dark #grain {
   opacity: 0.035;
 }
 
-html[data-theme="dark"] .hero-image-frame {
+body.dark .hero-image-frame {
   background: rgba(20, 20, 20, 0.6);
 }
