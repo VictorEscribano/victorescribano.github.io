@@ -422,17 +422,47 @@ body.dark .theme-toggle .icon-moon {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
-  padding: 0 2rem;
+  padding: 0 2rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  gap: 2.5rem;
 }
 
+/* Full-width hero image */
+.hero-image-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0 clamp(1rem, 3vw, 3rem);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Gradient overlay so text is legible over the image */
+.hero-image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.3) 40%, transparent 70%),
+    linear-gradient(to top, rgba(44, 95, 124, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Text sits on top of image */
 .hero-text {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -445,11 +475,12 @@ body.dark .theme-toggle .icon-moon {
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-size: clamp(3.5rem, 10vw, 9rem);
   line-height: 0.9;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: #f0ece4;
   text-transform: uppercase;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title .line-2 {
@@ -457,44 +488,28 @@ body.dark .theme-toggle .icon-moon {
   padding-left: 0.3em;
 }
 
-/* Hero portrait photo */
-.hero-image-frame {
-  width: clamp(220px, 22vw, 340px);
-  aspect-ratio: 3/4;
-  border: 1px solid var(--accent);
-  background: rgba(44, 95, 124, 0.06);
-  overflow: hidden;
-}
-
-.hero-image-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (max-width: 767px) {
-  .hero-content {
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
-  }
-  .hero-image-frame {
-    width: 55vw;
-    max-width: 260px;
-  }
-  .hero-title {
-    font-size: clamp(3rem, 14vw, 5rem);
-  }
-  .hero-title .line-2 {
-    padding-left: 0;
-  }
-}
-
 .hero-tagline {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: var(--text-muted);
+  color: rgba(240, 236, 228, 0.85);
   margin-top: 1.5rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767px) {
+  .hero-content {
+    padding: 0 1rem 3rem;
+  }
+  .hero-image-frame {
+    margin: 0 0.75rem;
+  }
+  .hero-title {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+  .hero-title .line-2 {
+    padding-left: 0;
+  }
 }
 
 .hero-stats {
@@ -511,9 +526,9 @@ body.dark .theme-toggle .icon-moon {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(240, 236, 228, 0.7);
   padding: 0.4rem 1rem;
-  border: 1px solid var(--separator);
+  border: 1px solid rgba(240, 236, 228, 0.25);
   border-radius: 100px;
 }
 
