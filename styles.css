@@ -447,7 +447,7 @@ body.dark .theme-toggle .icon-moon {
   padding-left: 0.5em;
 }
 
-/* Image placeholder frame behind title */
+/* Image frame behind title */
 .hero-image-frame {
   position: absolute;
   top: -10%;
@@ -457,6 +457,14 @@ body.dark .theme-toggle .icon-moon {
   border: 1px solid var(--accent);
   background: rgba(44, 95, 124, 0.06);
   z-index: -1;
+  overflow: hidden;
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
   display: none;
 }
 
@@ -599,6 +607,13 @@ body.dark .theme-toggle .icon-moon {
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-label {
@@ -1022,6 +1037,19 @@ body.dark .theme-toggle .icon-moon {
 .photo-cell.tall { aspect-ratio: 3/4; }
 .photo-cell.wide { aspect-ratio: 4/3; }
 .photo-cell.square { aspect-ratio: 1/1; }
+
+.photo-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.photo-cell {
+  position: relative;
+}
 
 .photo-overlay {
   position: absolute;
