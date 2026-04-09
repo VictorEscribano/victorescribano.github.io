@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victor Escribano · Cinematic Travel Creator</title>
+  <meta name="description" content="Cinematic travel photography & video. Solo adventurer. Brand collaborations.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Victor Escribano · Cinematic Travel Creator">
+  <meta property="og:description" content="Cinematic travel photography & video. Solo adventurer. Brand collaborations.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Favicon: inline film frame SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='6' width='28' height='20' rx='2' fill='none' stroke='%232c5f7c' stroke-width='2'/%3E%3Crect x='4' y='6' width='4' height='4' fill='%232c5f7c' opacity='0.5'/%3E%3Crect x='24' y='6' width='4' height='4' fill='%232c5f7c' opacity='0.5'/%3E%3Crect x='4' y='22' width='4' height='4' fill='%232c5f7c' opacity='0.5'/%3E%3Crect x='24' y='22' width='4' height='4' fill='%232c5f7c' opacity='0.5'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div id="grain">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise)"/>
+    </svg>
+  </div>
+
+  <!-- Letterbox Bars -->
+  <div class="letterbox-top"></div>
+  <div class="letterbox-bottom"></div>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu">
+    <a href="#work">Trabajo</a>
+    <a href="#gear">Kit</a>
+    <a href="#collabs">Collabs</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <!-- ============================================
+       1. HERO SECTION
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+
+    <header class="hero-nav">
+      <a href="#hero" class="logo">VEG</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#gear">Gear</a></li>
+        <li><a href="#collabs">Collabs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="hero-content">
+      <div class="hero-title-wrapper">
+        <h1 class="hero-title">
+          Victor
+          <span class="line-2">Escribano</span>
+        </h1>
+        <!-- REPLACE: Add your best travel portrait here, ideally Iceland or Sahara -->
+        <div class="hero-image-frame"></div>
+      </div>
+
+      <p class="hero-tagline">"La cámara, la mochila y la carretera."</p>
+
+      <div class="hero-stats">
+        <span class="hero-stat">Barcelona · 26</span>
+        <span class="hero-stat">Fujifilm XM-5</span>
+        <span class="hero-stat">Sirui Anamorphic</span>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+
+    <!-- Ticker Strip -->
+    <div class="hero-ticker">
+      <div class="ticker-track">
+        <span>ICELAND</span><span>·</span>
+        <span>SAHARA EL CHEGAGA</span><span>·</span>
+        <span>CINEMATIC VIDEO</span><span>·</span>
+        <span>SOLO TRAVEL</span><span>·</span>
+        <span>ANAMORPHIC</span><span>·</span>
+        <span>FUJIFILM</span><span>·</span>
+        <span>COLOR GRADING</span><span>·</span>
+        <span>MOROCCO</span><span>·</span>
+        <span>AURORAS BOREALES</span><span>·</span>
+        <span>ICELAND</span><span>·</span>
+        <span>SAHARA EL CHEGAGA</span><span>·</span>
+        <span>CINEMATIC VIDEO</span><span>·</span>
+        <span>SOLO TRAVEL</span><span>·</span>
+        <span>ANAMORPHIC</span><span>·</span>
+        <span>FUJIFILM</span><span>·</span>
+        <span>COLOR GRADING</span><span>·</span>
+        <span>MOROCCO</span><span>·</span>
+        <span>AURORAS BOREALES</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       2. ABOUT / STORY SECTION
+       ============================================ -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-image" data-animate>
+        <!-- REPLACE: Portrait photo, ideally a candid travel moment -->
+        [Retrato viajero]
+      </div>
+
+      <div class="about-text">
+        <p class="about-label" data-animate>Who I Am</p>
+        <h2 class="about-heading" data-animate>
+          <span class="h-lg">Viajero.</span>
+          <span class="h-md">Narrador visual.</span>
+          <span class="h-sm">Ingeniero de día.</span>
+        </h2>
+        <blockquote class="about-body" data-animate>
+          Pasé 5 noches en el Erg Chegaga con Mohammed, mi guía nómada, sin turistas, sin señal, sin filtros. Antes estuve en Islandia buscando auroras boreales en el hielo. Y antes de eso, en el Instituto de Astrofísica de Canarias mirando el universo desde otro ángulo. Viajo solo, hago amigos por el camino, duermo en hostales y lo grabo todo con una Fujifilm XM-5 que me cabe en la riñonera.
+        </blockquote>
+
+        <div class="about-features" data-animate>
+          <div class="about-feature">
+            <div class="icon">🎬</div>
+            <div class="label">Cinematic video & foto</div>
+          </div>
+          <div class="about-feature">
+            <div class="icon">🌍</div>
+            <div class="label">Viajes reales, stories reales</div>
+          </div>
+          <div class="about-feature">
+            <div class="icon">🧭</div>
+            <div class="label">Aventuras sin guion</div>
+          </div>
+        </div>
+
+        <a href="#work" class="btn-outline" data-animate>Ver mi trabajo ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. CONTENT CATEGORIES (What I Create)
+       ============================================ -->
+  <section class="categories" id="categories">
+    <div class="section-header" data-animate>
+      <h2 class="section-title">Lo que creo</h2>
+      <p class="section-subtitle">lo que llevo en la mochila y en la cabeza</p>
+    </div>
+
+    <div class="categories-scroll">
+      <div class="category-card" data-animate>
+        <div class="category-icon">01 — Solo</div>
+        <h3 class="category-name">Viaje solo</h3>
+        <p class="category-desc">Hostales, autoestop y conversaciones que cambian perspectivas</p>
+      </div>
+      <div class="category-card" data-animate data-delay="1">
+        <div class="category-icon">02 — Foto</div>
+        <h3 class="category-name">Fotografía cinemática</h3>
+        <p class="category-desc">Fujifilm XM-5 + lentes Sirui anamórficas. F-Log2. Color grading manual</p>
+      </div>
+      <div class="category-card" data-animate data-delay="2">
+        <div class="category-icon">03 — Vídeo</div>
+        <h3 class="category-name">Vídeo narrativo</h3>
+        <p class="category-desc">No monto un corte sin que cuente algo. Cada secuencia tiene una razón</p>
+      </div>
+      <div class="category-card" data-animate data-delay="3">
+        <div class="category-icon">04 — Crew</div>
+        <h3 class="category-name">Viaje con amigos</h3>
+        <p class="category-desc">El mismo espíritu aventurero, más risas, diferente energía</p>
+      </div>
+      <div class="category-card" data-animate data-delay="4">
+        <div class="category-icon">05 — Cultura</div>
+        <h3 class="category-name">Cultura & Gente</h3>
+        <p class="category-desc">Los sitios importan, pero las personas que conoces por el camino importan más</p>
+      </div>
+      <div class="category-card" data-animate data-delay="5">
+        <div class="category-icon">06 — Vlog</div>
+        <h3 class="category-name">Vlogging</h3>
+        <p class="category-desc">Cámara en la mano. Sin guion. Sin pretender</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. GEAR SECTION
+       ============================================ -->
+  <section class="gear" id="gear">
+    <div class="gear-inner">
+      <p class="gear-label" data-animate>Mi Kit</p>
+      <h2 class="gear-heading" data-animate>"La riñonera más poderosa del mundo"</h2>
+      <p class="gear-subtitle" data-animate>Todo lo que necesito cabe en menos de 2kg</p>
+
+      <ul class="gear-list">
+        <li class="gear-item" data-animate data-delay="1">
+          <span class="gear-num">01</span>
+          <span class="gear-name">Fujifilm X-M5 <span class="gear-badge">collab</span></span>
+          <span class="gear-note">Cuerpo principal</span>
+          <div class="gear-blurb">Compacta, ligera y con F-Log2. La cámara que siempre va en mi riñonera sin pesar más que un libro.</div>
+        </li>
+        <li class="gear-item" data-animate data-delay="2">
+          <span class="gear-num">02</span>
+          <span class="gear-name">Lente 15-45mm kit</span>
+          <span class="gear-note">Versátil y ligera</span>
+          <div class="gear-blurb">El zoom kit que cubre desde paisajes épicos hasta retratos ambientales. Perfecta para viajar ligero.</div>
+        </li>
+        <li class="gear-item" data-animate data-delay="3">
+          <span class="gear-num">03</span>
+          <span class="gear-name">Sirui 20mm Anamórfica AF <span class="gear-badge">collab</span></span>
+          <span class="gear-note">Look de cine</span>
+          <div class="gear-blurb">Flares horizontales, relación de aspecto ancha. Calidad de cine en menos de 300 gramos.</div>
+        </li>
+        <li class="gear-item" data-animate data-delay="4">
+          <span class="gear-num">04</span>
+          <span class="gear-name">DJI Mic <span class="gear-badge">collab</span></span>
+          <span class="gear-note">Próximamente</span>
+          <div class="gear-blurb">Audio limpio sin cables. Para capturar conversaciones que cambian vidas en cualquier entorno.</div>
+        </li>
+        <li class="gear-item" data-animate data-delay="5">
+          <span class="gear-num">05</span>
+          <span class="gear-name">DJI Action 360 <span class="gear-badge">collab</span></span>
+          <span class="gear-note">Próximamente</span>
+          <div class="gear-blurb">Lo que la cámara principal no puede mostrar. Inmersión total en los paisajes más remotos del mundo.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. PORTFOLIO / WORK SECTION
+       ============================================ -->
+  <section class="work" id="work">
+    <div class="work-inner">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Trabajo</h2>
+      </div>
+
+      <!-- Photography -->
+      <p class="work-sub-label" data-animate>Fotografía</p>
+      <div class="photo-grid">
+        <!-- REPLACE: Upload your best photos here -->
+        <div class="photo-cell tall" data-animate>
+          [Foto — Iceland]
+          <div class="photo-overlay"><span>Iceland</span></div>
+        </div>
+        <div class="photo-cell wide" data-animate>
+          [Foto — Sahara]
+          <div class="photo-overlay"><span>Sahara</span></div>
+        </div>
+        <div class="photo-cell square" data-animate>
+          [Foto — Canarias]
+          <div class="photo-overlay"><span>Canarias</span></div>
+        </div>
+        <div class="photo-cell tall" data-animate>
+          [Foto — Morocco]
+          <div class="photo-overlay"><span>Morocco</span></div>
+        </div>
+        <div class="photo-cell wide" data-animate>
+          [Foto — Erg Chegaga]
+          <div class="photo-overlay"><span>Erg Chegaga</span></div>
+        </div>
+        <div class="photo-cell square" data-animate>
+          [Foto — Barcelona]
+          <div class="photo-overlay"><span>Barcelona</span></div>
+        </div>
+        <div class="photo-cell tall" data-animate>
+          [Foto — Northern Lights]
+          <div class="photo-overlay"><span>Northern Lights</span></div>
+        </div>
+        <div class="photo-cell wide" data-animate>
+          [Foto — Desert Night]
+          <div class="photo-overlay"><span>Desert Night</span></div>
+        </div>
+      </div>
+
+      <!-- Video -->
+      <p class="work-sub-label" data-animate>Vídeo</p>
+      <div class="video-scroll">
+        <!-- REPLACE: Add YouTube or Vimeo embed URL -->
+        <div class="video-card" data-animate>
+          <div class="video-frame">
+            <div class="play-btn"></div>
+          </div>
+          <p class="video-title">Islandia — Buscando auroras</p>
+        </div>
+        <div class="video-card" data-animate data-delay="1">
+          <div class="video-frame">
+            <div class="play-btn"></div>
+          </div>
+          <p class="video-title">Erg Chegaga — 5 noches en el Sáhara</p>
+        </div>
+        <div class="video-card" data-animate data-delay="2">
+          <div class="video-frame">
+            <div class="play-btn"></div>
+          </div>
+          <p class="video-title">[Tu próximo vídeo]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. COLLABORATIONS / BRANDS
+       ============================================ -->
+  <section class="collabs" id="collabs">
+    <div class="collabs-inner">
+      <p class="about-label" data-animate>Colaboraciones</p>
+      <h2 class="gear-heading" data-animate style="font-style: normal; margin-bottom: 1rem;">"Marcas en las que creo"</h2>
+      <p class="collabs-body" data-animate>No hago publicidad. Cuento por qué uso estas herramientas en el mundo real, con contexto real, en los sitios más remotos del mundo.</p>
+
+      <div class="brands-grid" data-animate>
+        <div class="brand-card">
+          <h3 class="brand-name">Fujifilm</h3>
+          <p class="brand-pitch">La cámara que siempre va en mi riñonera</p>
+          <div class="brand-underline"></div>
+        </div>
+        <div class="brand-card">
+          <h3 class="brand-name">Sirui</h3>
+          <p class="brand-pitch">Calidad de cine en menos de 300g</p>
+          <div class="brand-underline"></div>
+        </div>
+        <div class="brand-card">
+          <h3 class="brand-name">DJI Mic</h3>
+          <p class="brand-pitch">Capturar conversaciones que cambian vidas</p>
+          <div class="brand-underline"></div>
+        </div>
+        <div class="brand-card">
+          <h3 class="brand-name">DJI 360</h3>
+          <p class="brand-pitch">Lo que la cámara principal no puede mostrar</p>
+          <div class="brand-underline"></div>
+        </div>
+        <div class="brand-card">
+          <h3 class="brand-name">eSIM</h3>
+          <p class="brand-pitch">Conectado en el Sáhara</p>
+          <div class="brand-underline"></div>
+        </div>
+        <div class="brand-card">
+          <h3 class="brand-name">Seguros de viaje</h3>
+          <p class="brand-pitch">Me lo juego todo. Por eso me aseguro</p>
+          <div class="brand-underline"></div>
+        </div>
+        <div class="brand-card">
+          <h3 class="brand-name">Sound FX Library</h3>
+          <p class="brand-pitch">El rugido de los camellos que no pude grabar en directo</p>
+          <div class="brand-underline"></div>
+        </div>
+      </div>
+
+      <div class="collabs-cta" data-animate>
+        <h3>¿Hablamos?</h3>
+        <p>Si crees que tu marca encaja con aventuras reales, sitios reales y cero pose, escríbeme.</p>
+        <!-- UPDATE: Replace placeholder email with your real email -->
+        <a href="mailto:victor.escribano@placeholder.com" class="btn-filled">Proponer colaboración</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       7. CONTACT / FOOTER
+       ============================================ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-big-name">VÍCTOR</div>
+
+      <div class="contact-info" data-animate>
+        <div class="contact-item">
+          <span>📍</span> Barcelona, España
+        </div>
+        <div class="contact-item">
+          <!-- UPDATE: Replace with your real Instagram handle -->
+          <span>📸</span> <a href="https://instagram.com/victorescribanog" target="_blank" rel="noopener">@victorescribanog</a>
+        </div>
+        <div class="contact-item">
+          <!-- UPDATE: Replace with your real email -->
+          <span>✉️</span> <a href="mailto:victor.escribano@placeholder.com">victor.escribano@placeholder.com</a>
+        </div>
+      </div>
+
+      <div class="social-icons" data-animate>
+        <!-- Instagram -->
+        <a href="https://instagram.com/victorescribanog" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <!-- TikTok -->
+        <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <!-- YouTube -->
+        <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+
+      <footer class="footer" data-animate>
+        © 2025 Victor Escribano Garcia · Hecho con Fujifilm y obsesión
+      </footer>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
