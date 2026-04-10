@@ -625,25 +625,20 @@ body.dark .theme-toggle .icon-moon {
   }
 }
 
-.about-image {
-  aspect-ratio: 4/5;
-  background: var(--bg);
-  border: 1px solid var(--accent);
+.about-image-stack {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.about-image img {
+.about-image-stack img,
+.about-image-stack video {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16/9;
   object-fit: cover;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  display: block;
 }
 
 .about-label {
@@ -1044,7 +1039,7 @@ body.dark .theme-toggle .icon-moon {
 }
 
 @media (min-width: 900px) {
-  .photo-grid { columns: 3; }
+  .photo-grid { columns: 2; }
 }
 
 .photo-cell {
@@ -1065,7 +1060,7 @@ body.dark .theme-toggle .icon-moon {
 }
 
 .photo-cell.tall { aspect-ratio: 3/4; }
-.photo-cell.wide { aspect-ratio: 4/3; }
+.photo-cell.wide { aspect-ratio: 16/9; }
 .photo-cell.square { aspect-ratio: 1/1; }
 
 .photo-cell img {

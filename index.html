@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <style>
     body.dark{--bg:#0a0a0a;--surface:#141414;--accent:#5a9fc2;--accent-light:#74b5d4;--gold:#c8a96e;--teal:#5a9fc2;--text:#f0ece4;--text-muted:#888880;--separator:#2a2a2a;--grid-line:#1a1a1a;background:#0a0a0a;color:#f0ece4}
     body.dark .icon-sun{display:none}body.dark .icon-moon{display:block!important}
@@ -146,7 +146,9 @@
        ============================================ -->
   <section class="about" id="about">
     <div class="about-grid">
-      <div class="about-image" data-animate>
+      <div class="about-image-stack" data-animate>
+        <img src="assets/images/salefie_victor_con_fuji.jpeg" alt="Victor con su Fujifilm en el Sáhara" loading="lazy">
+        <video src="assets/videos/video_victor_abriendo_ojos_azules_islandia.mp4" autoplay muted loop playsinline></video>
         <img src="assets/images/victor_plano_sonriendo_silandia.jpeg" alt="Victor sonriendo en Islandia" loading="lazy">
       </div>
 
@@ -158,7 +160,7 @@
           <span class="h-sm" data-i18n="about.h3">Ingeniero de día.</span>
         </h2>
         <blockquote class="about-body" data-animate data-i18n="about.body">
-          Pasé 5 noches en el Erg Chegaga con Mohammed, mi guía nómada, sin turistas, sin señal, sin filtros. Antes estuve en Islandia buscando auroras boreales en el hielo. Y antes de eso, en el Instituto de Astrofísica de Canarias mirando el universo desde otro ángulo. Viajo solo, hago amigos por el camino, duermo en hostales y lo grabo todo con una Fujifilm XM-5 que me cabe en la riñonera.
+          Pasé 5 noches en el Erg Chegaga con Mohammed, mi guía nómada, sin turistas, sin señal, sin filtros. Antes estuve en Islandia buscando auroras boreales en el hielo. Y antes de eso, en el Instituto de Astrofísica de Canarias mirando el universo desde otro ángulo. Viajo solo, hago amigos por el camino, duermo en hostales y lo grabo todo con mi Fujifilm XM-5.
         </blockquote>
 
         <div class="about-features" data-animate>
@@ -230,15 +232,15 @@
   <section class="gear" id="gear">
     <div class="gear-inner">
       <p class="gear-label" data-animate data-i18n="gear.label">Mi Kit</p>
-      <h2 class="gear-heading" data-animate data-i18n="gear.heading">"La riñonera más poderosa del mundo"</h2>
-      <p class="gear-subtitle" data-animate data-i18n="gear.subtitle">Todo lo que necesito cabe en menos de 2kg</p>
+      <h2 class="gear-heading" data-animate data-i18n="gear.heading">"Todo lo que necesito para crear"</h2>
+      <p class="gear-subtitle" data-animate data-i18n="gear.subtitle">Menos de 2kg. Sin excusas.</p>
 
       <ul class="gear-list">
         <li class="gear-item" data-animate data-delay="1">
           <span class="gear-num">01</span>
           <span class="gear-name">Fujifilm X-M5 <span class="gear-badge">collab</span></span>
           <span class="gear-note" data-i18n="gear.1.note">Cuerpo principal</span>
-          <div class="gear-blurb" data-i18n="gear.1.blurb">Compacta, ligera y con F-Log2. La cámara que siempre va en mi riñonera sin pesar más que un libro.</div>
+          <div class="gear-blurb" data-i18n="gear.1.blurb">Compacta, ligera y con F-Log2. La cámara que me acompaña a todas partes sin pesar más que un libro.</div>
         </li>
         <li class="gear-item" data-animate data-delay="2">
           <span class="gear-num">02</span>
@@ -280,19 +282,19 @@
       <!-- Photography -->
       <p class="work-sub-label" data-animate data-i18n="work.photo">Fotografía</p>
       <div class="photo-grid">
-        <div class="photo-cell tall" data-animate>
+        <div class="photo-cell wide" data-animate>
           <img src="assets/images/nomada_contraluz_duna1.jpeg" alt="Nómada en silueta sobre duna al atardecer" loading="lazy">
           <div class="photo-overlay"><span>Erg Chegaga</span></div>
+        </div>
+        <div class="photo-cell wide" data-animate>
+          <img src="assets/images/avion_avandonado_islandia_lejos.jpeg" alt="Avión abandonado DC-3 en Islandia" loading="lazy">
+          <div class="photo-overlay"><span>Iceland</span></div>
         </div>
         <div class="photo-cell wide" data-animate>
           <img src="assets/images/camellos_duna_contraluz_nomada.jpeg" alt="Camellos y nómada en contraluz sobre dunas" loading="lazy">
           <div class="photo-overlay"><span>Sahara</span></div>
         </div>
-        <div class="photo-cell square" data-animate>
-          <img src="assets/images/plano_forntal_avion_avandonado1.jpeg" alt="Avión abandonado DC-3 en Islandia" loading="lazy">
-          <div class="photo-overlay"><span>Iceland</span></div>
-        </div>
-        <div class="photo-cell tall" data-animate>
+        <div class="photo-cell wide" data-animate>
           <img src="assets/images/plano_espaldas_cascada.jpeg" alt="Victor de espaldas frente a cascada en Islandia" loading="lazy">
           <div class="photo-overlay"><span>Iceland</span></div>
         </div>
@@ -300,17 +302,17 @@
           <img src="assets/images/motorcoss_puesta_sol_dunas.jpeg" alt="Moto y silueta en dunas al atardecer" loading="lazy">
           <div class="photo-overlay"><span>Sahara</span></div>
         </div>
-        <div class="photo-cell square" data-animate>
-          <img src="assets/images/selfio_con_mi_amigo_nomada_my_brother.jpeg" alt="Victor con su amigo nómada Mohammed" loading="lazy">
-          <div class="photo-overlay"><span>Erg Chegaga</span></div>
-        </div>
-        <div class="photo-cell tall" data-animate>
+        <div class="photo-cell wide" data-animate>
           <img src="assets/images/hogera_con_nomada.jpeg" alt="Nómada junto a hoguera bajo las estrellas" loading="lazy">
           <div class="photo-overlay"><span>Desert Night</span></div>
         </div>
         <div class="photo-cell wide" data-animate>
           <img src="assets/images/auroras_con_gente2.jpeg" alt="Grupo observando auroras boreales en Islandia" loading="lazy">
           <div class="photo-overlay"><span>Northern Lights</span></div>
+        </div>
+        <div class="photo-cell wide" data-animate>
+          <img src="assets/images/nomada_en_duna_lejos.jpeg" alt="Nómada caminando en la duna" loading="lazy">
+          <div class="photo-overlay"><span>Sahara</span></div>
         </div>
       </div>
 
@@ -440,6 +442,6 @@
     </div>
   </section>
 
-  <script src="main.js?v=7"></script>
+  <script src="main.js?v=9"></script>
 </body>
 </html>
