@@ -984,29 +984,20 @@ body.dark .theme-toggle .icon-moon {
 
 /* Product image on hover */
 .gear-product-img {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%) scale(0.85);
-  height: 100px;
-  width: auto;
+  width: 100%;
+  max-height: 0;
   object-fit: contain;
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
-  z-index: 3;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.2));
+  margin: 0 auto;
+  display: block;
 }
 
 .gear-item:hover .gear-product-img {
+  max-height: clamp(100px, 15vw, 180px);
   opacity: 1;
-  transform: translateY(-50%) scale(1);
-}
-
-@media (max-width: 767px) {
-  .gear-product-img {
-    display: none;
-  }
+  margin-top: 1rem;
 }
 
 .gear-num {
@@ -1060,6 +1051,7 @@ body.dark .theme-toggle .icon-moon {
   max-height: 80px;
   padding-top: 0.5rem;
 }
+
 
 /* ============================================
    5. PORTFOLIO / WORK SECTION
