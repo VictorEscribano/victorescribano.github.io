@@ -832,20 +832,47 @@ body.dark .theme-toggle .icon-moon {
   }
 }
 
+/* Stacked background images inside category cards */
+.card-bg-images {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  opacity: 0.18;
+  transition: opacity 0.4s;
+}
+
+.card-bg-images img {
+  flex: 1;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.category-card:hover .card-bg-images {
+  opacity: 0.3;
+}
+
+/* Gradient overlay so text stays readable */
 .category-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.08;
+  z-index: 1;
+  background: linear-gradient(to top, var(--surface) 5%, transparent 50%, var(--surface) 100%);
+  opacity: 0.7;
   transition: opacity 0.3s;
 }
 
-.category-card:nth-child(1)::before { background: linear-gradient(135deg, var(--teal), transparent); }
-.category-card:nth-child(2)::before { background: linear-gradient(135deg, var(--gold), transparent); }
-.category-card:nth-child(3)::before { background: linear-gradient(135deg, #8e4a6d, transparent); }
-.category-card:nth-child(4)::before { background: linear-gradient(135deg, #6e8e4a, transparent); }
-.category-card:nth-child(5)::before { background: linear-gradient(135deg, #4a5e8e, transparent); }
-.category-card:nth-child(6)::before { background: linear-gradient(135deg, #8e6e4a, transparent); }
+/* Fallback gradients for cards without images */
+.category-card:nth-child(3)::before,
+.category-card:nth-child(6)::before {
+  background:
+    linear-gradient(to top, var(--surface) 5%, transparent 50%, var(--surface) 100%),
+    linear-gradient(135deg, var(--accent), transparent);
+  opacity: 0.12;
+}
 
 .category-card:hover {
   border-color: var(--accent);
@@ -857,6 +884,8 @@ body.dark .theme-toggle .icon-moon {
 }
 
 .category-icon {
+  position: relative;
+  z-index: 2;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 600;
   font-size: 0.75rem;
@@ -867,6 +896,8 @@ body.dark .theme-toggle .icon-moon {
 }
 
 .category-name {
+  position: relative;
+  z-index: 2;
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   font-weight: 700;
@@ -875,6 +906,8 @@ body.dark .theme-toggle .icon-moon {
 }
 
 .category-desc {
+  position: relative;
+  z-index: 2;
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 0.9rem;
