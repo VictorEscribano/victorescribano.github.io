@@ -628,7 +628,7 @@ body.dark .theme-toggle .icon-moon {
 .about-image-stack {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
 
 .about-image-stack img,
@@ -839,7 +839,7 @@ body.dark .theme-toggle .icon-moon {
   display: flex;
   flex-direction: column;
   z-index: 0;
-  opacity: 0.18;
+  opacity: 0.3;
   transition: opacity 0.4s;
 }
 
@@ -851,7 +851,7 @@ body.dark .theme-toggle .icon-moon {
 }
 
 .category-card:hover .card-bg-images {
-  opacity: 0.3;
+  opacity: 0.45;
 }
 
 /* Gradient overlay so text stays readable */
