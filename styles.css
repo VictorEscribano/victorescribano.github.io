@@ -1010,6 +1010,31 @@ body.dark .gear {
   max-height: clamp(130px, 20vw, 240px);
 }
 
+/* Wishlist / interested-in subsection */
+.gear-collab-section {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--separator);
+}
+
+.gear-collab-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.gear-list--wishlist .gear-item {
+  opacity: 0.7;
+}
+
+.gear-list--wishlist .gear-note {
+  flex: 1;
+}
+
 /* Collab banner — always visible */
 .gear-collab-banner {
   width: 100%;
