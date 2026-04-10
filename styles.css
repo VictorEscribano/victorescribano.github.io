@@ -1000,6 +1000,37 @@ body.dark .theme-toggle .icon-moon {
   margin-top: 1rem;
 }
 
+.gear-item:hover .gear-product-img--large {
+  max-height: clamp(130px, 20vw, 240px);
+}
+
+/* Collab banner for gear without product image */
+.gear-collab-banner {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease, padding 0.4s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.gear-item:hover .gear-collab-banner {
+  max-height: 60px;
+  opacity: 1;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
 .gear-num {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 300;
