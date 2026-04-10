@@ -926,11 +926,16 @@ body.dark .theme-toggle .icon-moon {
    ============================================ */
 .gear {
   padding: 6rem 2rem;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 60px 60px;
   background-color: var(--bg);
+  --grid-line-gear: rgba(0, 0, 0, 0.035);
+  background-image:
+    linear-gradient(var(--grid-line-gear) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-gear) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+body.dark .gear {
+  --grid-line-gear: rgba(255, 255, 255, 0.03);
 }
 
 .gear-inner {
