@@ -68,6 +68,11 @@ var translations = {
     'collabs.cta.title': '¿Hablamos?',
     'collabs.cta.body': 'Si crees que tu marca encaja con aventuras reales, sitios reales y cero pose, escríbeme.',
     'collabs.cta.btn': 'Proponer colaboración',
+    'form.name': 'Tu nombre',
+    'form.message': 'Cuéntame sobre tu marca y cómo podríamos trabajar juntos...',
+    'form.sending': 'Enviando...',
+    'form.success': '¡Mensaje enviado! Te responderé pronto.',
+    'form.error': 'Algo fue mal. Escríbeme a vesgarcia99@gmail.com',
     'footer': '© 2025 Victor Escribano Garcia · Hecho con Fujifilm y obsesión'
   },
   en: {
@@ -133,6 +138,11 @@ var translations = {
     'collabs.cta.title': "Let's talk?",
     'collabs.cta.body': 'If you think your brand fits with real adventures, real places, and zero posing — write me.',
     'collabs.cta.btn': 'Propose a collaboration',
+    'form.name': 'Your name',
+    'form.message': 'Tell me about your brand and how we could work together...',
+    'form.sending': 'Sending...',
+    'form.success': 'Message sent! I\'ll get back to you soon.',
+    'form.error': 'Something went wrong. Email me at vesgarcia99@gmail.com',
     'footer': '© 2025 Victor Escribano Garcia · Made with Fujifilm and obsession'
   },
   fr: {
@@ -198,6 +208,11 @@ var translations = {
     'collabs.cta.title': 'On en parle ?',
     'collabs.cta.body': 'Si tu penses que ta marque colle avec de vraies aventures, de vrais endroits et zéro pose, écris-moi.',
     'collabs.cta.btn': 'Proposer une collaboration',
+    'form.name': 'Votre prénom',
+    'form.message': 'Parlez-moi de votre marque et de comment nous pourrions collaborer...',
+    'form.sending': 'Envoi en cours...',
+    'form.success': 'Message envoyé ! Je vous répondrai bientôt.',
+    'form.error': 'Une erreur s\'est produite. Écrivez-moi à vesgarcia99@gmail.com',
     'footer': '© 2025 Victor Escribano Garcia · Fait avec Fujifilm et obsession'
   },
   zh: {
@@ -263,6 +278,11 @@ var translations = {
     'collabs.cta.title': '聊聊？',
     'collabs.cta.body': '如果你的品牌适合真正的冒险、真实的地方、零摆拍，请联系我。',
     'collabs.cta.btn': '提议合作',
+    'form.name': '你的名字',
+    'form.message': '告诉我关于你的品牌以及我们如何合作...',
+    'form.sending': '发送中...',
+    'form.success': '消息已发送！我会尽快回复你。',
+    'form.error': '出了点问题。请直接发邮件至 vesgarcia99@gmail.com',
     'footer': '© 2025 Victor Escribano Garcia · 用Fujifilm和执着打造'
   }
 };
@@ -277,6 +297,13 @@ function setLang(lang) {
     var key = el.getAttribute('data-i18n');
     if (strings[key]) {
       el.textContent = strings[key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (strings[key]) {
+      el.placeholder = strings[key];
     }
   });
 
@@ -366,6 +393,53 @@ window.setLang = setLang;
   } else {
     animatedElements.forEach(function (el) {
       el.classList.add('visible');
+    });
+  }
+
+  // --- Collab Form Submission ---
+  var collabForm = document.getElementById('collab-form');
+  if (collabForm) {
+    collabForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = collabForm.querySelector('button[type="submit"]');
+      var feedback = document.getElementById('form-feedback');
+      var lang = localStorage.getItem('lang') || 'es';
+      var t = translations[lang] || translations.es;
+
+      if (collabForm.querySelector('[name="_honey"]').value) return;
+
+      btn.disabled = true;
+      btn.textContent = t['form.sending'];
+      feedback.textContent = '';
+      feedback.className = 'form-feedback';
+
+      fetch('https://formsubmit.co/ajax/vesgarcia99@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: collabForm.querySelector('[name="name"]').value,
+          email: collabForm.querySelector('[name="email"]').value,
+          message: collabForm.querySelector('[name="message"]').value
+        })
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success === 'true' || data.success === true) {
+          feedback.textContent = t['form.success'];
+          feedback.className = 'form-feedback success';
+          collabForm.reset();
+        } else {
+          throw new Error('failed');
+        }
+      })
+      .catch(function () {
+        feedback.textContent = t['form.error'];
+        feedback.className = 'form-feedback error';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = t['collabs.cta.btn'];
+      });
     });
   }
 

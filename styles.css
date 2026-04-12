@@ -415,6 +415,31 @@ body.dark .theme-toggle .icon-moon {
   color: var(--accent);
 }
 
+.mobile-menu-social {
+  display: flex;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  justify-content: center;
+}
+
+.mobile-menu-social a {
+  color: rgba(255,255,255,0.55);
+  transition: color 0.3s;
+  display: flex;
+}
+
+.mobile-menu-social a:hover {
+  color: #fff;
+}
+
+.mobile-menu-social svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
 /* Hero Content */
 .hero-content {
   position: relative;
@@ -530,6 +555,31 @@ body.dark .theme-toggle .icon-moon {
   padding: 0.4rem 1rem;
   border: 1px solid rgba(240, 236, 228, 0.25);
   border-radius: 100px;
+}
+
+/* Hero Social Icons */
+.hero-social {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-social a {
+  color: rgba(240, 236, 228, 0.5);
+  transition: color 0.3s;
+  display: flex;
+}
+
+.hero-social a:hover {
+  color: rgba(240, 236, 228, 1);
+}
+
+.hero-social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 /* Hero Ticker */
@@ -1429,6 +1479,81 @@ body.dark .gear-collab-banner:hover {
   max-width: 500px;
   margin: 0 auto 2rem;
   line-height: 1.6;
+}
+
+/* Collab contact form */
+.collab-form {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.collab-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.collab-form input[type="text"],
+.collab-form input[type="email"],
+.collab-form textarea {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--separator);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.collab-form input[type="text"]::placeholder,
+.collab-form input[type="email"]::placeholder,
+.collab-form textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.collab-form input[type="text"]:focus,
+.collab-form input[type="email"]:focus,
+.collab-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.collab-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  margin-bottom: 0.75rem;
+}
+
+.collab-form .btn-filled {
+  width: 100%;
+}
+
+.collab-form .btn-filled:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-feedback {
+  margin-top: 0.75rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  min-height: 1.2em;
+}
+
+.form-feedback.success { color: #4caf50; }
+.form-feedback.error   { color: #e74c3c; }
+
+@media (max-width: 480px) {
+  .collab-form-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================================
