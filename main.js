@@ -15,7 +15,7 @@ var translations = {
     'about.h1': 'Viajero.',
     'about.h2': 'Narrador visual.',
     'about.h3': 'Ingeniero de día.',
-    'about.body': 'Viajero, narrador visual y creador de contenido con foco en aventura auténtica. He producido material en el Sáhara (Erg Chegaga, 5 noches off-grid), Islandia y el Instituto de Astrofísica de Canarias. Trabajo con color grading adaptado al entorno y al flujo de cada historia. Disponible para colaboraciones con marcas que quieran mostrar sus productos en entornos reales y exigentes.',
+    'about.body': 'Viajero, narrador visual y creador de contenido con foco en aventura auténtica. He producido material en el Sáhara (Erg Chegaga, 5 noches off-grid), Islandia buscando auroras, en Kirguistán conviviendo con nómadas, cazando con águilas y viviendo en yurtas y muchas otras aventuras. Trabajo con color grading adaptado al entorno y al flujo de cada historia. Disponible para colaboraciones con marcas que quieran mostrar sus productos en entornos reales y exigentes.',
     'about.feat1': 'Cinematic video & foto',
     'about.feat2': 'Viajes reales, stories reales',
     'about.feat3': 'Aventuras sin guion',
@@ -52,6 +52,8 @@ var translations = {
     'work.title': 'Trabajo',
     'work.photo': 'Fotografía',
     'work.video': 'Vídeo',
+    'work.reels': 'Reels',
+    'work.more': 'Ver más',
     'work.also': 'Ver también en',
     'work.coming': 'Próximamente',
     'collabs.label': 'Colaboraciones',
@@ -85,7 +87,7 @@ var translations = {
     'about.h1': 'Traveler.',
     'about.h2': 'Visual storyteller.',
     'about.h3': 'Engineer by day.',
-    'about.body': 'Traveler, visual storyteller and content creator focused on authentic adventure. I have produced material in the Sahara (Erg Chegaga, 5 nights off-grid), Iceland and the Canary Islands Astrophysics Institute. I work with color grading adapted to the environment and the flow of each story. Available for collaborations with brands that want to showcase their products in real, demanding environments.',
+    'about.body': 'Traveler, visual storyteller and content creator focused on authentic adventure. I have produced material in the Sahara (Erg Chegaga, 5 nights off-grid), Iceland chasing the auroras, Kyrgyzstan living with nomads, hunting with eagles and sleeping in yurts, and many other adventures. I work with color grading adapted to the environment and the flow of each story. Available for collaborations with brands that want to showcase their products in real, demanding environments.',
     'about.feat1': 'Cinematic video & photo',
     'about.feat2': 'Real trips, real stories',
     'about.feat3': 'Unscripted adventures',
@@ -122,6 +124,8 @@ var translations = {
     'work.title': 'Work',
     'work.photo': 'Photography',
     'work.video': 'Video',
+    'work.reels': 'Reels',
+    'work.more': 'See more',
     'work.also': 'Also on',
     'work.coming': 'Coming soon',
     'collabs.label': 'Collaborations',
@@ -155,7 +159,7 @@ var translations = {
     'about.h1': 'Voyageur.',
     'about.h2': 'Narrateur visuel.',
     'about.h3': 'Ingénieur le jour.',
-    'about.body': "Voyageur, narrateur visuel et créateur de contenu axé sur l'aventure authentique. J'ai produit du matériel au Sahara (Erg Chegaga, 5 nuits off-grid), en Islande et à l'Institut d'Astrophysique des Canaries. Je travaille avec un color grading adapté à l'environnement et au flux de chaque histoire. Disponible pour des collaborations avec des marques qui veulent montrer leurs produits dans des environnements réels et exigeants.",
+    'about.body': "Voyageur, narrateur visuel et créateur de contenu axé sur l'aventure authentique. J'ai produit du matériel au Sahara (Erg Chegaga, 5 nuits off-grid), en Islande à la poursuite des aurores, au Kirghizistan en vivant avec les nomades, en chassant avec des aigles et en dormant dans des yourtes, et bien d'autres aventures. Je travaille avec un color grading adapté à l'environnement et au flux de chaque histoire. Disponible pour des collaborations avec des marques qui veulent montrer leurs produits dans des environnements réels et exigeants.",
     'about.feat1': 'Vidéo & photo cinématiques',
     'about.feat2': 'Vrais voyages, vraies histoires',
     'about.feat3': 'Aventures sans scénario',
@@ -192,6 +196,8 @@ var translations = {
     'work.title': 'Travail',
     'work.photo': 'Photographie',
     'work.video': 'Vidéo',
+    'work.reels': 'Reels',
+    'work.more': 'Voir plus',
     'work.also': 'Aussi sur',
     'work.coming': 'Bientôt',
     'collabs.label': 'Collaborations',
@@ -225,7 +231,7 @@ var translations = {
     'about.h1': '旅行者。',
     'about.h2': '视觉叙事者。',
     'about.h3': '日间工程师。',
-    'about.body': '旅行者、视觉叙事者和专注于真实冒险的内容创作者。我在撒哈拉沙漠（Erg Chegaga，5晚野外露营）、冰岛和加那利群岛天体物理研究所制作过内容。我的调色风格会根据环境和每个故事的节奏进行调整。欢迎与希望在真实且极端环境中展示产品的品牌合作。',
+    'about.body': '旅行者、视觉叙事者和专注于真实冒险的内容创作者。我在撒哈拉沙漠（Erg Chegaga，5晚野外露营）、冰岛追逐极光、吉尔吉斯斯坦与游牧民同住、用雄鹰狩猎、住在毡房，以及许多其他冒险中制作过内容。我的调色风格会根据环境和每个故事的节奏进行调整。欢迎与希望在真实且极端环境中展示产品的品牌合作。',
     'about.feat1': '电影级视频和摄影',
     'about.feat2': '真实旅行，真实故事',
     'about.feat3': '无剧本冒险',
@@ -262,6 +268,8 @@ var translations = {
     'work.title': '作品',
     'work.photo': '摄影',
     'work.video': '视频',
+    'work.reels': 'Reels',
+    'work.more': '查看更多',
     'work.also': '也可在',
     'work.coming': '即将推出',
     'collabs.label': '合作',
@@ -395,6 +403,34 @@ window.setLang = setLang;
       el.classList.add('visible');
     });
   }
+
+  // --- Photo Gallery: show 6 random, "See more" loads 4 more ---
+  (function () {
+    var grid = document.querySelector('.photo-grid');
+    var btn = document.querySelector('.photo-more-btn');
+    if (!grid) return;
+
+    var cells = Array.prototype.slice.call(grid.querySelectorAll('.photo-cell'));
+    // Fisher–Yates shuffle for a random order on every load
+    for (var i = cells.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = cells[i]; cells[i] = cells[j]; cells[j] = tmp;
+    }
+    cells.forEach(function (c) { grid.appendChild(c); c.style.display = 'none'; });
+
+    var INITIAL = 6, BATCH = 4, shown = 0;
+    function reveal(n) {
+      for (var k = 0; k < n && shown < cells.length; k++) {
+        var c = cells[shown];
+        c.style.display = '';
+        c.classList.add('visible');
+        shown++;
+      }
+      if (btn) btn.style.display = shown >= cells.length ? 'none' : '';
+    }
+    reveal(INITIAL);
+    if (btn) btn.addEventListener('click', function () { reveal(BATCH); });
+  })();
 
   // --- Collab Form Submission ---
   var collabForm = document.getElementById('collab-form');
