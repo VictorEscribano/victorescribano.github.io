@@ -62,7 +62,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=21">
+  <link rel="stylesheet" href="styles.css?v=22">
   <style>
     body.dark{--bg:#0a0a0a;--surface:#141414;--accent:#5a9fc2;--accent-light:#74b5d4;--gold:#c8a96e;--teal:#5a9fc2;--text:#f0ece4;--text-muted:#888880;--separator:#2a2a2a;--grid-line:#1a1a1a;background:#0a0a0a;color:#f0ece4}
     body.dark .icon-sun{display:none}body.dark .icon-moon{display:block!important}
@@ -453,37 +453,23 @@
 
       <!-- Reels -->
       <p class="work-sub-label" data-animate data-i18n="work.reels">Reels</p>
-      <div class="reels-strip">
-        <div class="phone" data-animate>
-          <span class="phone-island"></span>
-          <div class="phone-screen">
-            <iframe src="https://www.instagram.com/reel/DX41ss1ISFq/embed/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen title="Reel de Instagram"></iframe>
+      <div class="reel-player" data-animate>
+        <div class="reel-row">
+          <button class="reel-nav reel-prev" type="button" aria-label="Reel anterior">‹</button>
+          <div class="phone">
+            <span class="phone-island"></span>
+            <div class="phone-screen reel-screen">
+              <video class="reel-video" playsinline muted preload="metadata"></video>
+              <button class="reel-tap" type="button" aria-label="Reproducir o pausar"></button>
+              <button class="reel-mute" type="button" aria-label="Activar sonido">
+                <svg class="ic ic-off" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4.03v8.05A4.5 4.5 0 0016.5 12z" opacity=".25"/><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M19 5l-2 2m0 8l2 2M21 7l-4 4m0 0l4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                <svg class="ic ic-on" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 7.5a4.5 4.5 0 010 9M18.5 5a8 8 0 010 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+              </button>
+            </div>
           </div>
+          <button class="reel-nav reel-next" type="button" aria-label="Siguiente reel">›</button>
         </div>
-        <div class="phone" data-animate data-delay="1">
-          <span class="phone-island"></span>
-          <div class="phone-screen">
-            <iframe src="https://www.instagram.com/reel/DZNZYvmoSkx/embed/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen title="Reel de Instagram"></iframe>
-          </div>
-        </div>
-        <div class="phone" data-animate data-delay="2">
-          <span class="phone-island"></span>
-          <div class="phone-screen">
-            <iframe src="https://www.instagram.com/reel/DZ2wLNyoXlK/embed/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen title="Reel de Instagram"></iframe>
-          </div>
-        </div>
-        <div class="phone" data-animate data-delay="3">
-          <span class="phone-island"></span>
-          <div class="phone-screen">
-            <iframe src="https://www.instagram.com/reel/DXum_xLDt2U/embed/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen title="Reel de Instagram"></iframe>
-          </div>
-        </div>
-        <div class="phone" data-animate data-delay="4">
-          <span class="phone-island"></span>
-          <div class="phone-screen">
-            <iframe src="https://www.instagram.com/reel/DV6X_QljqSn/embed/" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen title="Reel de Instagram"></iframe>
-          </div>
-        </div>
+        <div class="reel-dots" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -596,6 +582,6 @@
     </div>
   </section>
 
-  <script src="main.js?v=21"></script>
+  <script src="main.js?v=22"></script>
 </body>
 </html>
