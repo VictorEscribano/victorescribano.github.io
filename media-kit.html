@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Kit · Victor Escribano — Travel Creator</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f2ed; --surface:#eae6df; --accent:#2c5f7c; --gold:#b89a5a;
+    --text:#1a1a1a; --muted:#6b6960; --sep:#d4cfc6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Barlow Condensed',sans-serif;
+    background:#cfc9bf; color:var(--text);
+    line-height:1.5; padding:2rem 1rem;
+  }
+  .sheet{
+    max-width:820px; margin:0 auto; background:var(--bg);
+    box-shadow:0 8px 40px rgba(0,0,0,.15);
+  }
+  /* Toolbar (hidden on print) */
+  .toolbar{
+    max-width:820px; margin:0 auto 1rem; display:flex; gap:.75rem;
+    justify-content:space-between; align-items:center; flex-wrap:wrap;
+  }
+  .toolbar a, .toolbar button{
+    font-family:'Barlow Condensed',sans-serif; font-size:.85rem;
+    letter-spacing:.1em; text-transform:uppercase; cursor:pointer;
+    border:1px solid var(--accent); color:var(--accent); background:transparent;
+    padding:.55rem 1.1rem; border-radius:999px; text-decoration:none;
+    transition:.25s;
+  }
+  .toolbar button{background:var(--accent); color:#fff}
+  .toolbar a:hover{background:var(--accent); color:#fff}
+  .toolbar .hint{border:none;color:var(--muted);text-transform:none;letter-spacing:0;font-size:.8rem;padding:.55rem 0}
+
+  /* Header */
+  .mk-head{display:flex; gap:1.5rem; padding:2.2rem 2.4rem 1.6rem; border-bottom:1px solid var(--sep)}
+  .mk-photo{width:120px;height:150px;object-fit:cover;flex:none;filter:grayscale(.1) contrast(1.05)}
+  .mk-id{display:flex;flex-direction:column;justify-content:center}
+  .mk-eyebrow{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .mk-name{font-family:'Playfair Display',serif;font-size:2.6rem;line-height:1;margin:.25rem 0}
+  .mk-role{font-size:1.05rem;color:var(--muted);letter-spacing:.04em}
+  .mk-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);margin-top:.5rem}
+
+  .mk-body{padding:1.6rem 2.4rem 2.2rem}
+  .mk-row{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem}
+  @media(max-width:680px){.mk-row{grid-template-columns:1fr}.mk-head{flex-direction:column}}
+
+  h2.mk-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--sep)}
+  .mk-block{margin-bottom:1.5rem}
+  .mk-bio{font-size:1rem;color:#33312c}
+  ul.mk-list{list-style:none}
+  ul.mk-list li{position:relative;padding-left:1.1rem;margin-bottom:.35rem;font-size:.98rem;color:#33312c}
+  ul.mk-list li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:600}
+
+  /* Highlights */
+  .mk-highlights{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+  .mk-hl{flex:1;min-width:150px;border:1px solid var(--sep);padding:.9rem 1rem;background:var(--surface)}
+  .mk-hl .num{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--accent);line-height:1}
+  .mk-hl .lbl{font-size:.82rem;color:var(--muted);margin-top:.2rem}
+
+  /* Platforms */
+  .mk-plat{font-size:.95rem;color:#33312c;margin-bottom:.3rem}
+  .mk-plat b{color:var(--accent);font-weight:600}
+
+  /* Offers */
+  .mk-offers{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.2rem}
+  @media(max-width:680px){.mk-offers{grid-template-columns:1fr}}
+  .mk-offer{border:1px solid var(--sep);padding:.85rem .9rem;background:var(--surface)}
+  .mk-offer h3{font-size:1rem;font-weight:600;letter-spacing:.03em;margin-bottom:.25rem}
+  .mk-offer p{font-size:.85rem;color:var(--muted);line-height:1.4}
+
+  .mk-trip{border:1px solid var(--accent);background:linear-gradient(180deg,rgba(44,95,124,.07),transparent);padding:1.1rem 1.3rem;margin-bottom:1.5rem}
+  .mk-trip .badge{display:inline-block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.15rem .7rem;margin-bottom:.5rem}
+  .mk-trip h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.35rem}
+  .mk-trip p{font-size:.92rem;color:#33312c}
+
+  /* Gallery strip */
+  .mk-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-bottom:1.5rem}
+  .mk-gallery .g-cell{height:90px;overflow:hidden}
+  .mk-gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.05)}
+  .mk-gallery img.zoom{transform:scale(1.3)}
+
+  /* Contact footer */
+  .mk-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;padding-top:1.1rem;border-top:1px solid var(--sep);font-size:.95rem}
+  .mk-foot a{color:var(--accent);text-decoration:none;font-weight:600}
+  .mk-foot .loc{color:var(--muted)}
+
+  @media print{
+    body{background:#fff;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .toolbar{display:none}
+    .sheet{box-shadow:none;max-width:100%}
+    .mk-gallery .g-cell{height:80px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <a href="index.html" data-mk="back">← Volver a la web</a>
+    <span class="hint" data-mk="hint">Para guardarlo como PDF: pulsa “Descargar PDF” y elige “Guardar como PDF”.</span>
+    <button onclick="window.print()" data-mk="dlpdf">⬇ Descargar PDF</button>
+  </div>
+
+  <div class="sheet">
+    <header class="mk-head">
+      <img class="mk-photo" src="assets/images/victor_primer_plan_foto_principal.jpeg" alt="Victor Escribano">
+      <div class="mk-id">
+        <span class="mk-eyebrow">Media Kit · 2026</span>
+        <h1 class="mk-name">Victor Escribano</h1>
+        <span class="mk-role" data-mk="role">Travel Creator &amp; Videógrafo cinemático · Barcelona</span>
+        <span class="mk-tagline" data-mk="tagline">"La cámara, la mochila y el micrófono."</span>
+      </div>
+    </header>
+
+    <div class="mk-body">
+
+      <div class="mk-gallery">
+        <div class="g-cell"><img class="zoom" src="assets/images/camellos_duna_contraluz_nomada.jpeg" alt=""></div>
+        <div class="g-cell"><img src="assets/images/plano_espaldas_cascada.jpeg" alt=""></div>
+        <div class="g-cell"><img src="assets/images/kyrgyzstan_04.jpeg" alt=""></div>
+        <div class="g-cell"><img src="assets/images/kyrgyzstan_01.jpeg" alt=""></div>
+      </div>
+
+      <div class="mk-row">
+        <div>
+          <div class="mk-block">
+            <h2 class="mk-h" data-mk="h.about">Quién soy</h2>
+            <p class="mk-bio" data-mk="bio">Viajero, narrador visual y creador de contenido centrado en la aventura auténtica. He producido material en el Sáhara (Erg Chegaga, 5 noches off-grid), Islandia buscando auroras y Kirguistán conviviendo con nómadas, cazando con águilas y durmiendo en yurtas. Trabajo con color grading propio, adaptado al entorno y a la historia de cada lugar.</p>
+          </div>
+
+          <div class="mk-block">
+            <h2 class="mk-h" data-mk="h.do">Qué hago</h2>
+            <ul class="mk-list">
+              <li data-mk="do1">Vídeo cinematográfico y fotografía de viaje</li>
+              <li data-mk="do2">Vlogs y reels en entornos reales y exigentes</li>
+              <li data-mk="do3">Producto en uso real, integrado de forma natural</li>
+              <li data-mk="do4">Edición y color grading propios · derechos de uso incluidos</li>
+            </ul>
+          </div>
+
+          <div class="mk-block">
+            <h2 class="mk-h" data-mk="h.ideal">Marca ideal</h2>
+            <ul class="mk-list">
+              <li data-mk="ideal1">Cámaras, óptica y accesorios</li>
+              <li data-mk="ideal2">Outdoor, aventura y equipaje</li>
+              <li data-mk="ideal3">eSIM y conectividad de viaje</li>
+              <li data-mk="ideal4">Seguros de viaje</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="mk-block">
+            <h2 class="mk-h" data-mk="h.highlights">Destacados</h2>
+            <div class="mk-highlights">
+              <div class="mk-hl"><div class="num">10K+</div><div class="lbl" data-mk="hl1">vistas · Vlog Islandia (TikTok)</div></div>
+              <div class="mk-hl"><div class="num">6K+</div><div class="lbl" data-mk="hl2">vistas · Vlog Sáhara (TikTok)</div></div>
+            </div>
+          </div>
+
+          <div class="mk-block">
+            <h2 class="mk-h" data-mk="h.platforms">Plataformas</h2>
+            <p class="mk-plat"><b>Instagram</b> · @victor.escri</p>
+            <p class="mk-plat"><b>TikTok</b> · @victor.escri</p>
+            <p class="mk-plat"><b>YouTube</b> · @Victorescri99</p>
+            <p class="mk-plat"><b data-mk="plat.portfolio">Portfolio</b> · <a href="https://victorescribano.github.io/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none">victorescribano</a></p>
+          </div>
+
+          <div class="mk-block">
+            <h2 class="mk-h" data-mk="h.kit">Mi kit</h2>
+            <ul class="mk-list">
+              <li>Fujifilm X-M5 (F-Log2)</li>
+              <li>Fujinon XC 15-45mm f/3.5-5.6</li>
+              <li data-mk="kit3">Sirui 20mm anamórfica AF</li>
+              <li data-mk="kit4">Todo en menos de 2&nbsp;kg</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mk-block">
+        <h2 class="mk-h" data-mk="h.offers">Qué puedo crear para tu marca</h2>
+        <div class="mk-offers">
+          <div class="mk-offer"><h3 data-mk="off1t">Contenido de marca</h3><p data-mk="off1d">Reels, fotos y stories con tu producto en uso real. Derechos de uso incluidos.</p></div>
+          <div class="mk-offer"><h3 data-mk="off2t">Cobertura de viaje</h3><p data-mk="off2d">Documento un destino entero con tu producto integrado de forma natural.</p></div>
+          <div class="mk-offer"><h3 data-mk="off3t">Embajador de marca</h3><p data-mk="off3d">Relación a largo plazo, presente de forma genuina en mis aventuras.</p></div>
+        </div>
+      </div>
+
+      <div class="mk-trip">
+        <span class="badge" data-mk="tripbadge">Septiembre 2026</span>
+        <h3 data-mk="triptitle">Trae tu marca a mi próxima aventura</h3>
+        <p data-mk="tripbody">Próximo destino en preparación. Tu producto viaja conmigo y aparece en uso real, en un entorno exigente, con contenido cinematográfico.</p>
+      </div>
+
+      <div class="mk-foot">
+        <span class="loc" data-mk="footloc">📍 Barcelona, España</span>
+        <span>✉ <a href="mailto:vesgarcia99@gmail.com">vesgarcia99@gmail.com</a></span>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+(function(){
+  var MK = {
+    es: {
+      back:"← Volver a la web",
+      hint:"Para guardarlo como PDF: pulsa “Descargar PDF” y elige “Guardar como PDF”.",
+      dlpdf:"⬇ Descargar PDF",
+      role:"Travel Creator & Videógrafo cinemático · Barcelona",
+      tagline:"\"La cámara, la mochila y el micrófono.\"",
+      "h.about":"Quién soy","h.do":"Qué hago","h.ideal":"Marca ideal",
+      "h.highlights":"Destacados","h.platforms":"Plataformas","h.kit":"Mi kit",
+      "h.offers":"Qué puedo crear para tu marca",
+      bio:"Viajero, narrador visual y creador de contenido centrado en la aventura auténtica. He producido material en el Sáhara (Erg Chegaga, 5 noches off-grid), Islandia buscando auroras y Kirguistán conviviendo con nómadas, cazando con águilas y durmiendo en yurtas. Trabajo con color grading propio, adaptado al entorno y a la historia de cada lugar.",
+      do1:"Vídeo cinematográfico y fotografía de viaje",
+      do2:"Vlogs y reels en entornos reales y exigentes",
+      do3:"Producto en uso real, integrado de forma natural",
+      do4:"Edición y color grading propios · derechos de uso incluidos",
+      ideal1:"Cámaras, óptica y accesorios",
+      ideal2:"Outdoor, aventura y equipaje",
+      ideal3:"eSIM y conectividad de viaje",
+      ideal4:"Seguros de viaje",
+      hl1:"vistas · Vlog Islandia (TikTok)",
+      hl2:"vistas · Vlog Sáhara (TikTok)",
+      "plat.portfolio":"Portfolio",
+      kit3:"Sirui 20mm anamórfica AF",
+      kit4:"Todo en menos de 2 kg",
+      off1t:"Contenido de marca",
+      off1d:"Reels, fotos y stories con tu producto en uso real. Derechos de uso incluidos.",
+      off2t:"Cobertura de viaje",
+      off2d:"Documento un destino entero con tu producto integrado de forma natural.",
+      off3t:"Embajador de marca",
+      off3d:"Relación a largo plazo, presente de forma genuina en mis aventuras.",
+      tripbadge:"Septiembre 2026",
+      triptitle:"Trae tu marca a mi próxima aventura",
+      tripbody:"Próximo destino en preparación. Tu producto viaja conmigo y aparece en uso real, en un entorno exigente, con contenido cinematográfico.",
+      footloc:"📍 Barcelona, España"
+    },
+    en: {
+      back:"← Back to site",
+      hint:"To save as PDF: click “Download PDF” and choose “Save as PDF”.",
+      dlpdf:"⬇ Download PDF",
+      role:"Travel Creator & Cinematic Videographer · Barcelona",
+      tagline:"\"The camera, the backpack, and the mic.\"",
+      "h.about":"Who I am","h.do":"What I do","h.ideal":"Ideal brands",
+      "h.highlights":"Highlights","h.platforms":"Platforms","h.kit":"My gear",
+      "h.offers":"What I can create for your brand",
+      bio:"Traveler, visual storyteller and content creator focused on authentic adventure. I've produced work in the Sahara (Erg Chegaga, 5 nights off-grid), Iceland chasing the auroras, and Kyrgyzstan living with nomads, hunting with eagles and sleeping in yurts. I work with my own color grading, adapted to each environment and story.",
+      do1:"Cinematic video and travel photography",
+      do2:"Vlogs and reels in real, demanding environments",
+      do3:"Product in real use, integrated naturally",
+      do4:"My own editing and color grading · usage rights included",
+      ideal1:"Cameras, lenses and accessories",
+      ideal2:"Outdoor, adventure and luggage",
+      ideal3:"eSIM and travel connectivity",
+      ideal4:"Travel insurance",
+      hl1:"views · Iceland Vlog (TikTok)",
+      hl2:"views · Sahara Vlog (TikTok)",
+      "plat.portfolio":"Portfolio",
+      kit3:"Sirui 20mm Anamorphic AF",
+      kit4:"All under 2 kg",
+      off1t:"Branded content",
+      off1d:"Reels, photos and stories with your product in real use. Usage rights included.",
+      off2t:"Trip coverage",
+      off2d:"I document a whole destination with your product integrated naturally.",
+      off3t:"Brand ambassador",
+      off3d:"A long-term relationship, present genuinely throughout my adventures.",
+      tripbadge:"September 2026",
+      triptitle:"Bring your brand on my next adventure",
+      tripbody:"Next destination in the works. Your product travels with me and appears in real use, in a demanding environment, with cinematic content.",
+      footloc:"📍 Barcelona, Spain"
+    },
+    fr: {
+      back:"← Retour au site",
+      hint:"Pour l'enregistrer en PDF : clique sur « Télécharger le PDF » et choisis « Enregistrer en PDF ».",
+      dlpdf:"⬇ Télécharger le PDF",
+      role:"Travel Creator & Vidéaste cinématographique · Barcelone",
+      tagline:"\"L'appareil photo, le sac à dos et le micro.\"",
+      "h.about":"Qui je suis","h.do":"Ce que je fais","h.ideal":"Marques idéales",
+      "h.highlights":"À la une","h.platforms":"Plateformes","h.kit":"Mon matériel",
+      "h.offers":"Ce que je peux créer pour ta marque",
+      bio:"Voyageur, narrateur visuel et créateur de contenu axé sur l'aventure authentique. J'ai produit du matériel au Sahara (Erg Chegaga, 5 nuits off-grid), en Islande à la poursuite des aurores et au Kirghizistan en vivant avec les nomades, en chassant avec des aigles et en dormant dans des yourtes. Je travaille avec mon propre color grading, adapté à chaque environnement et à chaque histoire.",
+      do1:"Vidéo cinématographique et photographie de voyage",
+      do2:"Vlogs et reels dans des environnements réels et exigeants",
+      do3:"Produit en usage réel, intégré naturellement",
+      do4:"Montage et color grading maison · droits d'utilisation inclus",
+      ideal1:"Appareils photo, optiques et accessoires",
+      ideal2:"Outdoor, aventure et bagagerie",
+      ideal3:"eSIM et connectivité de voyage",
+      ideal4:"Assurance voyage",
+      hl1:"vues · Vlog Islande (TikTok)",
+      hl2:"vues · Vlog Sahara (TikTok)",
+      "plat.portfolio":"Portfolio",
+      kit3:"Sirui 20mm anamorphique AF",
+      kit4:"Le tout en moins de 2 kg",
+      off1t:"Contenu de marque",
+      off1d:"Reels, photos et stories avec ton produit en usage réel. Droits d'utilisation inclus.",
+      off2t:"Couverture de voyage",
+      off2d:"Je documente une destination entière avec ton produit intégré naturellement.",
+      off3t:"Ambassadeur de marque",
+      off3d:"Une relation à long terme, présente authentiquement tout au long de mes aventures.",
+      tripbadge:"Septembre 2026",
+      triptitle:"Emmène ta marque dans ma prochaine aventure",
+      tripbody:"Prochaine destination en préparation. Ton produit voyage avec moi et apparaît en usage réel, dans un environnement exigeant, avec du contenu cinématographique.",
+      footloc:"📍 Barcelone, Espagne"
+    },
+    zh: {
+      back:"← 返回网站",
+      hint:"保存为 PDF：点击「下载 PDF」并选择「另存为 PDF」。",
+      dlpdf:"⬇ 下载 PDF",
+      role:"旅行创作者 & 电影摄影师 · 巴塞罗那",
+      tagline:"\"相机、背包和麦克风。\"",
+      "h.about":"关于我","h.do":"我做什么","h.ideal":"理想品牌",
+      "h.highlights":"亮点","h.platforms":"平台","h.kit":"我的器材",
+      "h.offers":"我能为你的品牌创作什么",
+      bio:"旅行者、视觉叙事者与内容创作者，专注真实的冒险。我曾在撒哈拉（Erg Chegaga，5 晚无电网）、冰岛追极光，以及吉尔吉斯斯坦与游牧民同住、驯鹰狩猎、夜宿毡房进行创作。我使用自己的调色，依据每个环境与故事进行调整。",
+      do1:"电影感视频与旅行摄影",
+      do2:"在真实严苛环境中的 Vlog 与 Reels",
+      do3:"产品真实使用，自然融入",
+      do4:"自有剪辑与调色 · 含使用授权",
+      ideal1:"相机、镜头与配件",
+      ideal2:"户外、探险与行李箱包",
+      ideal3:"eSIM 与旅行联网",
+      ideal4:"旅行保险",
+      hl1:"次观看 · 冰岛 Vlog（TikTok）",
+      hl2:"次观看 · 撒哈拉 Vlog（TikTok）",
+      "plat.portfolio":"作品集",
+      kit3:"Sirui 20mm 变形宽银幕 AF",
+      kit4:"全部不到 2 公斤",
+      off1t:"品牌内容",
+      off1d:"展示你产品真实使用的 Reels、照片和快拍。含使用授权。",
+      off2t:"旅程纪录",
+      off2d:"我用整段旅程自然融入你的产品。",
+      off3t:"品牌大使",
+      off3d:"长期合作关系，真实地贯穿我的整个冒险。",
+      tripbadge:"2026 年 9 月",
+      triptitle:"带上你的品牌，加入我的下一场冒险",
+      tripbody:"下一站正在筹备中。你的产品与我同行，在严苛环境中真实使用，并以电影感内容呈现。",
+      footloc:"📍 西班牙，巴塞罗那"
+    }
+  };
+  var lang = (localStorage.getItem('lang') || 'es');
+  var t = MK[lang] || MK.es;
+  document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-CN' : lang);
+  document.querySelectorAll('[data-mk]').forEach(function(el){
+    var k = el.getAttribute('data-mk');
+    if (t[k] != null) el.textContent = t[k];
+  });
+})();
+</script>
+</body>
+</html>
