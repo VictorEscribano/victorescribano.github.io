@@ -493,7 +493,7 @@ window.setLang = setLang;
     var player = document.querySelector('.reel-player');
     if (!player) return;
     var BASE = 'assets/videos/reels/';
-    var REELS = ['reel1', 'reel2', 'reel3', 'reel4', 'reel5', 'reel6', 'reel7', 'reel8'];
+    var REELS = ['reel9', 'reel1', 'reel2', 'reel3', 'reel4', 'reel5', 'reel6', 'reel7', 'reel8'];
     var video = player.querySelector('.reel-video');
     var screen = player.querySelector('.reel-screen');
     var muteBtn = player.querySelector('.reel-mute');
