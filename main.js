@@ -430,8 +430,10 @@ window.setLang = setLang;
     });
   }
 
-  // --- Dark Mode Toggle ---
-  if (localStorage.getItem('theme') === 'dark') {
+  // --- Dark Mode Toggle (dark is the default; light is opt-in) ---
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.remove('dark');
+  } else {
     document.body.classList.add('dark');
   }
 
